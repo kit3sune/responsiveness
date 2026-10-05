@@ -47,6 +47,9 @@ img{
 	display: grid;
 	gap: 5px;
 	grid-template-columns: 500px;
+	justify-content: left;
+	
+
 
 	/* Play with: */
 	/* justify-content:; */
@@ -55,7 +58,6 @@ img{
 	/* align-content:; */
  }
 
- 
 
 
 @media screen and (min-width: 776px){
@@ -71,23 +73,24 @@ img{
 	/* Make this a two column grid. */
 	.grid{
 
-
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	
 		
 		/* Play with: */
 		/* justify-content:; */
 		/* align-items:;  */
 
-
-		
  	}
 
  	.item1{
+	grid-column: 1 / -1;
  		 /* Span the entire first row  */
-		
 		  /* grid-column: ; */
  	}
 	
 	.item2{
+		grid-row: 2 / span 3
 		/* Start in row 2 and span 3 rows */
 		/* grid-row:; */
 
@@ -101,10 +104,15 @@ img{
 
 	/* Make this a three column grid using fr. */
 	.grid{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
 
 		/* Why don't we bother with justify here? */
 	}
 	.item3{
+		
+	grid-row: 2 / span 2;
+	grid-column: 2/span 2;
 		/* Start in row 2 and span two rows 
 		   Start in column 2 and span two columns */
 
